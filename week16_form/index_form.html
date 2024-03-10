@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Форма регистрации</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="./styles_form.css" />
+  </head>
+  <body>
+    <div class="general__container">
+      <div class="welcome__container">
+        <h1>Форма регистрации с валидацией полей</h1>
+        <img
+          class="welcome__img"
+          src="./form_registration.png"
+          alt="Регистрация пользователя" />
+      </div>
+      <div class="form__container">
+        <h2>Регистрация пользователя</h2>
+        <form name="registrationForm" class="form">
+          <label for="userName" class="form__label">Имя:</label>
+          <input
+            type="text"
+            id="userName"
+            name="userName"
+            class="form__input"
+            placeholder="Имя пользователя"
+            minlength="2"
+            maxlength="20" />
+          <br />
+          <p class="form__errorMessage userNameError"></p>
+
+          <label for="userEmail" class="form__label">Email:</label>
+          <input
+            type="text"
+            id="userEmail"
+            name="userEmail"
+            class="form__input"
+            placeholder="Электронная почта" />
+          <br />
+          <p class="form__errorMessage userEmailError"></p>
+
+          <label for="userAge" class="form__label">Возраст:</label>
+          <input
+            type="text"
+            id="userAge"
+            name="userAge"
+            class="form__input"
+            placeholder="Возраст пользователя"
+            maxlength="2" />
+          <br />
+          <p class="form__errorMessage userAgeError"></p>
+
+          <label class="form__label">Пол пользователя:</label>
+          <input
+            type="radio"
+            id="userGender_men"
+            name="userGender"
+            value="мужской"
+            class="form__input"
+            checked />
+          <span>Мужской</span>
+          <input
+            type="radio"
+            id="userGender_women"
+            name="userGender"
+            value="женский"
+            class="form__input" />
+          <span>Женский</span>
+          <br />
+          <p class="form__errorMessage userGenderError"></p>
+
+          <label for="userCareer" class="form__label">Профессия:</label>
+          <select
+            id="userCareerSelect"
+            name="userCareerSelect"
+            class="form__select">
+            <option selected disabled>Профессия</option>
+            <option value="Врач">Врач</option>
+            <option value="Программист">Программист</option>
+            <option value="Учитель">Учитель</option>
+            <option value="Дизайнер">Дизайнер</option>
+            <option value="Инженер">Инженер</option>
+            <option value="Продавец">Продавец</option>
+            <option value="Другое">Другое</option>
+          </select>
+          <br />
+          <p class="form__errorMessage userCareerSelectError"></p>
+
+          <label for="userPassword" class="form__label">Пароль:</label>
+          <input
+            type="password"
+            id="userPassword"
+            name="userPassword"
+            class="form__input"
+            placeholder="Пароль пользователя"
+            minlength="8" />
+          <br />
+          <p class="form__errorMessage userPasswordError"></p>
+
+          <input
+            type="checkbox"
+            id="userAgreement"
+            name="userAgreement"
+            class="form__checkbox" />
+          <label for="userAgreement">Я согласен с обработкой данных</label>
+          <br />
+          <p class="form__errorMessage userAgreementError"></p>
+
+          <input
+            name="formSubmit"
+            type="submit"
+            value="Отправить"
+            class="form__submit"
+            disabled />
+        </form>
+      </div>
+    </div>
+    <script src="./script_form.js"></script>
+  </body>
+</html>
